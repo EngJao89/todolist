@@ -50,5 +50,23 @@ export const styles = StyleSheet.create({
   counterDoneBold: {
     fontSize: 14,
     color: '#FFF',
+  },
+  iconList: {
+    width: 56,
+    height: 56,
+    marginTop: 100,
+    marginLeft: -220,
+  },
+  emptyTextBold:{
+    color: '#808080',
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginTop: 24,
+    marginLeft: -330
+  },
+  emptyText: {
+    color: '#808080',
+    fontSize: 14,
+    marginLeft: -325
   }
 });

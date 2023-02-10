@@ -11,12 +11,15 @@ export function Input(){
         placeholder="Adicione uma nova tarefa..."
         placeholderTextColor="#B2B2B2"
       />
-      <TouchableOpacity 
-        activeOpacity={0.7}
-        style={styles.addButton}
-      >
-        <Feather name="plus-circle" size={24} color="white"/>
-      </TouchableOpacity>
+
+      <View style={styles.boxButton}>
+        <TouchableOpacity 
+          activeOpacity={0.7}
+          style={styles.addButton}
+        >
+          <Feather name="plus-circle" size={24} color="white"/>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
