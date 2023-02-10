@@ -9,19 +9,5 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row'
-  },
-  tasks: {
-    alignItems: 'center',
-    flexDirection: 'row'
-  },
-  tasksCounter: {
-    fontSize: 15,
-    color: '#FFF',
-    fontFamily: 'Inter-Regular',
-  },
-  tasksCounterBold: {
-    fontSize: 15,
-    color: '#FFF',
-    fontFamily: 'Inter-Bold',
   }
 });
