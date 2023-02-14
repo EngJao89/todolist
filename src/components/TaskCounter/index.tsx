@@ -5,10 +5,17 @@ interface HeaderProps {
   tasksCreate: number;
   tasksDone: number;
   tasksCreateCounter: number;
+  tasksDoneCounter: number;
 }
 
-export function TaskCounter({ tasksCreate, tasksDone, tasksCreateCounter }: HeaderProps) {
+export function TaskCounter({ 
+  tasksCreate, 
+  tasksDone, 
+  tasksCreateCounter, 
+  tasksDoneCounter 
+}: HeaderProps) {
   const tasksCounterText = tasksCreateCounter ===1;
+  const tasksCounterDone = tasksDoneCounter ===1;
 
   return(
     <View style={styles.container}>
@@ -19,7 +26,7 @@ export function TaskCounter({ tasksCreate, tasksDone, tasksCreateCounter }: Head
       
       <Text style={styles.tasksDone}>Concluidas </Text>
       <TouchableOpacity style={styles.tasksDoneButton}>
-        {<Text style={styles.counterDoneBold}>{tasksDone}</Text>}
+        {<Text style={styles.counterDoneBold}>{tasksDone} {tasksCounterDone}</Text>}
       </TouchableOpacity>
     </View>
   )

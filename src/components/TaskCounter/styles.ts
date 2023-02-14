@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
   tasksCreate: {
     justifyContent: 'flex-start',
     fontSize: 14,
+    fontFamily: 'Inter_700Bold',
     fontWeight: 'bold',
     color: '#4EA8DE',
     width: 54,
@@ -30,10 +31,12 @@ export const styles = StyleSheet.create({
   counterCreateBold: {
     fontSize: 14,
     color: '#D9D9D9',
+    marginLeft: 2
   },
   tasksDone: {
     fontSize: 14,
     color: '#8284FA',
+    fontFamily: 'Inter_700Bold',
     fontWeight: 'bold',
     marginLeft: 184,
     width: 78,

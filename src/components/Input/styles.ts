@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
   input: {
     color: '#B2B2B2',
     fontSize: 16,
+    fontFamily: 'Inter_400Regular',
     padding: 16
   },
   boxButton: {
