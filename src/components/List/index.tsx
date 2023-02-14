@@ -5,6 +5,7 @@ import { EditTaskArgs } from "../../screens/Home";
 import TaskItem from "../Item";
 import { ItemWrapper} from "../ItemWrapper";
 import { TaskCounter } from "../TaskCounter";
+import { EmptyTask } from "../EmptyTask";
 
 export interface Task {
   id: number;
@@ -23,6 +24,11 @@ export function List({tasks, toggleTaskDone, removeTask, editTask}: TasksListPro
 
   return(
   <View style={styles.tasks}>
+    <TaskCounter 
+      tasksCreate={tasks.length}
+      tasksDone={0}
+      tasksCreateCounter={0}
+    />
     <FlatList
       data={tasks}
       keyExtractor={item => String(item.id)}
@@ -41,7 +47,7 @@ export function List({tasks, toggleTaskDone, removeTask, editTask}: TasksListPro
         )
       }}
       style={{ marginTop: 32 }}
-      ListEmptyComponent={() => (<TaskCounter tasksCreate={0} tasksDone={0} tasksCounter={0}/>)}
+      ListEmptyComponent={() => (<EmptyTask />)}
       />
   </View>
   )

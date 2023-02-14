@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Text, Alert } from "react-native";
+import { View, Alert } from "react-native";
 import { styles } from "./styles";
 
 import { Header } from "../../components/Header";
@@ -80,9 +80,7 @@ export function Home(){
         tasks={tasks} 
         toggleTaskDone={handleToggleTaskDone}
         removeTask={handleRemoveTask} 
-        editTask={handleEditTask}
-        tasksCreate={tasks.length}
-        tasksDone={0}       
+        editTask={handleEditTask}      
       />
     </View>
   )
