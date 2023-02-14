@@ -22,31 +22,32 @@ export const styles = StyleSheet.create({
   taskMarker: {
     height: 16,
     width: 16,
-    borderRadius: 4,
+    borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#B2B2B2',
+    borderColor: '#4EA8DE',
     marginRight: 15,
     alignItems: 'center',
     justifyContent: 'center'
   },
   taskText: {
-    color: '#666',
+    color: '#F2F2F2',
     fontFamily: 'Inter_400Regular',
-    fontSize: 14
+    fontSize: 16
   },
   taskMarkerDone: {
     height: 16,
     width: 16,
-    borderRadius: 4,
-    backgroundColor: '#1DB863',
+    borderRadius: 8,
+    backgroundColor: '#5E60CE',
     marginRight: 15,
     alignItems: 'center',
     justifyContent: 'center'
   },
   taskTextDone: {
-    color: '#1DB863',
+    color: '#808080',
     textDecorationLine: 'line-through',
-    fontFamily: 'Inter_400Regular'
+    fontFamily: 'Inter_400Regular',
+    fontSize: 16
   },
   iconsContainer: {
     flexDirection: 'row',

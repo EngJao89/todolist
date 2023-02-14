@@ -15,7 +15,6 @@ export function TaskCounter({
   tasksDoneCounter 
 }: HeaderProps) {
   const tasksCounterText = tasksCreateCounter ===1;
-  const tasksCounterDone = tasksDoneCounter ===1;
 
   return(
     <View style={styles.container}>
@@ -26,7 +25,7 @@ export function TaskCounter({
       
       <Text style={styles.tasksDone}>Concluidas </Text>
       <TouchableOpacity style={styles.tasksDoneButton}>
-        {<Text style={styles.counterDoneBold}>{tasksDone} {tasksCounterDone}</Text>}
+        {<Text style={styles.counterDoneBold}>{tasksDone} {tasksCounterText}</Text>}
       </TouchableOpacity>
     </View>
   )
