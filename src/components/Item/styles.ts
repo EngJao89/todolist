@@ -5,11 +5,12 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row', 
     alignItems: 'center', 
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    backgroundColor: '#262626',
+    paddingTop: 16,
+    paddingBottom: 24
   },
-  infoContainer:{
-
-  },
+  infoContainer: {},
   taskButton: {
     flex: 1,
     paddingHorizontal: 24,
@@ -55,7 +56,7 @@ export const styles = StyleSheet.create({
   iconsDivider: {
     width: 1,
     height: 24,
-    backgroundColor: 'rgba(196,196,196,0.24)',
+    backgroundColor: '#262626',
     marginHorizontal: 12
   }
 });
