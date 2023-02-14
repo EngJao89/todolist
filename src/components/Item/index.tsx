@@ -77,28 +77,27 @@ export default function TaskItem({ task, toggleTaskDone, removeTask, editTask }:
         </TouchableOpacity>
     </View>
 
-      <View style={styles.iconsContainer}>
-        { isEditing ?(
-          <TouchableOpacity
-            onPress={handleFinishEditing}
-          >
-            <Icon 
-              name="x"
-              size={24}
-              color="#b2b2b2"
-            />
-          </TouchableOpacity>
-        ) :(
-          <TouchableOpacity
-            onPress={handleStartEditing}
-          >
-            <Image source={editIcon} />
-          </TouchableOpacity>
-        )}
-      </View>
+    <View style={styles.iconsContainer}>
+      { isEditing ?(
+        <TouchableOpacity
+          onPress={handleFinishEditing}
+        >
+          <Icon 
+            name="x"
+            size={24}
+            color="#b2b2b2"
+          />
+        </TouchableOpacity>
+      ) :(
+        <TouchableOpacity
+          onPress={handleStartEditing}
+        >
+          <Image source={editIcon} />
+        </TouchableOpacity>
+      )}
+    </View>
 
-      <View style={styles.iconsDivider} />
-
+    <View style={styles.iconsDivider} />
       <TouchableOpacity
         onPress={() => removeTask(task.id)}
         disabled={isEditing}

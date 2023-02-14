@@ -28,6 +28,7 @@ export function List({tasks, toggleTaskDone, removeTask, editTask}: TasksListPro
       tasksCreate={tasks.length}
       tasksDone={0}
       tasksCreateCounter={0}
+      tasksDoneCounter={0}
     />
     <FlatList
       data={tasks}
