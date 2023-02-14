@@ -3,8 +3,8 @@ import { View, Image, TouchableOpacity, Text, StyleSheet, TextInput} from 'react
 
 import { styles } from './styles';
 
-import trashIcon from '../assets/icons/trash/trash.png';
-import editIcon from '../assets/icons/edit/edit.png';
+import trashIcon from '../../assets/icons/trash/trash.png';
+import editIcon from '../../assets/icons/edit/edit.png';
 
 import Icon from '@expo/vector-icons/Feather';
 import { List, Task } from '../List';
