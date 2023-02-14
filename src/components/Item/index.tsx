@@ -6,19 +6,19 @@ import { styles } from './styles';
 import trashIcon from '../assets/icons/trash/trash.png';
 import editIcon from '../assets/icons/edit/edit.png';
 
-import Icon from 'react-native-vector-icons/Feather';
-import { List } from '../List';
-import { EditTaskArgs } from '../pages/Home';
+import Icon from '@expo/vector-icons/Feather';
+import { List, Task } from '../List';
+import { EditTaskArgs } from '../../screens/Home';
 
 
-interface ItemProps {
+interface TaskItemProps {
   task: Task;
   toggleTaskDone: (id: number) => void;
   removeTask: (id: number) => void;
   editTask: ({taskId, taskNewTitle}: EditTaskArgs) => void;
 }
 
-export default function Item({ task, toggleTaskDone, removeTask, editTask }: ItemProps) {
+export default function TaskItem({ task, toggleTaskDone, removeTask, editTask }: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [taskTitleValue, setTaskTitleValue] = useState(task.title);
   const textInputRef = useRef<TextInput>(null);

@@ -5,6 +5,11 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { List } from "../../components/List";
 
+export type  EditTaskArgs = {
+  taskId: number;
+  taskNewTitle: string;
+}
+
 export function Home(){
   return (
     <View style={styles.container}>

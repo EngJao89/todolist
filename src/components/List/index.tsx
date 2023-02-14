@@ -1,5 +1,9 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, FlatList } from "react-native";
 import { styles } from "./styles";
+
+import { EditTaskArgs } from "../../screens/Home";
+import TaskItem from "../Item";
+import { ItemWrapper } from "../ItemWrapper";
 
 import clipboard from "../../assets/icons/Clipboard.png";
 
@@ -8,7 +12,23 @@ interface HeaderProps {
   tasksDone: number;
 }
 
-export function List({ tasksCreate, tasksDone }: HeaderProps){
+export interface Task {
+  id: number;
+  title: string;
+  done: boolean;
+}
+
+interface TasksListProps {
+  tasks: Task[];
+  toggleTaskDone: (id: number) => void;
+  removeTask: (id: number) => void;
+  editTask: ({taskId, taskNewTitle}: EditTaskArgs) => void;
+}
+
+export function List(
+    { tasksCreate, tasksDone }: HeaderProps, 
+    {tasks, toggleTaskDone, removeTask, editTask}: TasksListProps
+  ){
   return(
   <View style={styles.tasks}>
     <Text style={styles.tasksCreate}>Criadas </Text>
@@ -25,8 +45,29 @@ export function List({ tasksCreate, tasksDone }: HeaderProps){
       <Image style={styles.iconList} source={clipboard}/>
       <Text style={styles.emptyTextBold}>Você ainda não tem tarefas cadastradas</Text>
       <Text style={styles.emptyText}>Crie tarefas e organize seus itens a fazer</Text>
-    </View>
 
+      <FlatList
+        data={tasks}
+        keyExtractor={item => String(item.id)}
+        contentContainerStyle={{ paddingBottom: 24 }}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item, index }) => {
+          return (
+            <ItemWrapper index={index}>
+              <TaskItem 
+                task={item} 
+                editTask={editTask} 
+                toggleTaskDone={toggleTaskDone} 
+                removeTask={removeTask}
+              />
+            </ItemWrapper>
+          )
+        }}
+        style={{
+          marginTop: 32
+        }}
+      />
+    </View>
   </View>
   )
 }
