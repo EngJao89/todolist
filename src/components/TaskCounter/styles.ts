@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  tasks: {
+  container: {
     alignSelf: 'flex-start',
     flexDirection: 'row',
     width: 327,
