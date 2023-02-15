@@ -24,12 +24,6 @@ export function List({tasks, toggleTaskDone, removeTask, editTask}: TasksListPro
 
   return(
   <View style={styles.tasks}>
-    <TaskCounter 
-      tasksCreate={tasks.length}
-      tasksDone={0}
-      tasksCreateCounter={0}
-      tasksDoneCounter={0}
-    />
     <FlatList
       data={tasks}
       keyExtractor={item => String(item.id)}

@@ -5,6 +5,7 @@ import { styles } from "./styles";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { Task, List } from "../../components/List";
+import { TaskCounter } from "../../components/TaskCounter";
 
 export type  EditTaskArgs = {
   taskId: number;
@@ -72,10 +73,27 @@ export function Home(){
       setTasks(updatedTasks);
   }
 
+  function handleMarkTaskAsDone(done: boolean) {
+    const task = tasks.filter((item) => item.done === true)[0];
+
+    task.done = !task.done;
+
+    const tasksDone = [...new Set([task, ...tasks])];
+
+    console.log(tasksDone)
+    setTasks(tasksDone);
+  }
+
   return (
     <View style={styles.container}>
       <Header />
       <Input addTask={handleAddTask}/>
+      <TaskCounter 
+        tasksCreate={tasks.length}        
+        tasksDone={handleMarkTaskAsDone}
+        tasksCreateCounter={0}
+        tasksDoneCounter={0}
+      />
       <List 
         tasks={tasks} 
         toggleTaskDone={handleToggleTaskDone}
