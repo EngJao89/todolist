@@ -3,16 +3,14 @@ import { styles } from "./styles";
 
 interface HeaderProps {
   tasksCreate: number;
-  tasksDone: any;
+  tasksDone: number;
   tasksCreateCounter: number;
-  tasksDoneCounter: number;
 }
 
 export function TaskCounter({ 
   tasksCreate, 
   tasksDone, 
-  tasksCreateCounter, 
-  tasksDoneCounter 
+  tasksCreateCounter,
 }: HeaderProps) {
   const tasksCounterText = tasksCreateCounter ===1;
 
@@ -25,7 +23,7 @@ export function TaskCounter({
       
       <Text style={styles.tasksDone}>Concluidas </Text>
       <TouchableOpacity style={styles.tasksDoneButton}>
-        {<Text style={styles.counterDoneBold}>{tasksDone} {tasksCounterText}</Text>}
+        {<Text style={styles.counterDoneBold}>{tasksDone}</Text>}
       </TouchableOpacity>
     </View>
   )
