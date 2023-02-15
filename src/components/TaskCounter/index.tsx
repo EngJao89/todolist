@@ -3,7 +3,7 @@ import { styles } from "./styles";
 
 interface HeaderProps {
   tasksCreate: number;
-  tasksDone: number;
+  tasksDone: any;
   tasksCreateCounter: number;
   tasksDoneCounter: number;
 }
