@@ -14,6 +14,7 @@ export type  EditTaskArgs = {
 
 export function Home(){
   const [tasks, setTasks] = useState<Task[]>([]);
+  const tasksDone = tasks.length > 0 ? tasks.filter(task => task.done).length : 0;
 
   function handleAddTask(newTaskTitle: string) {
     const taskSameTitle = tasks.find(task => task.title === newTaskTitle);
@@ -73,26 +74,14 @@ export function Home(){
       setTasks(updatedTasks);
   }
 
-  function handleMarkTaskAsDone(done: boolean) {
-    const task = tasks.filter((item) => item.done === true)[0];
-
-    task.done = !task.done;
-
-    const tasksDone = [...new Set([task, ...tasks])];
-
-    console.log(tasksDone)
-    setTasks(tasksDone);
-  }
-
   return (
     <View style={styles.container}>
       <Header />
       <Input addTask={handleAddTask}/>
       <TaskCounter 
         tasksCreate={tasks.length}        
-        tasksDone={handleMarkTaskAsDone}
+        tasksDone={tasksDone}
         tasksCreateCounter={0}
-        tasksDoneCounter={0}
       />
       <List 
         tasks={tasks} 
