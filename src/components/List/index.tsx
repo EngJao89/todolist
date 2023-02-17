@@ -4,7 +4,6 @@ import { styles } from "./styles";
 import { EditTaskArgs } from "../../screens/Home";
 import TaskItem from "../Item";
 import { ItemWrapper} from "../ItemWrapper";
-import { TaskCounter } from "../TaskCounter";
 import { EmptyTask } from "../EmptyTask";
 
 export interface Task {

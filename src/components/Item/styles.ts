@@ -58,7 +58,7 @@ export const styles = StyleSheet.create({
   iconsDivider: {
     width: 1,
     height: 24,
-    backgroundColor: '#262626',
+    backgroundColor: '#b2b2b2',
     marginHorizontal: 12
   }
 });
