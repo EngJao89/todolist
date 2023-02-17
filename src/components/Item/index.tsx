@@ -92,7 +92,11 @@ export default function TaskItem({ task, toggleTaskDone, removeTask, editTask }:
         <TouchableOpacity
           onPress={handleStartEditing}
         >
-          <Image source={editIcon} />
+          <Icon 
+            name="edit" 
+            size={16} 
+            color="#b2b2b2" 
+          />
         </TouchableOpacity>
       )}
     </View>
